@@ -1,0 +1,57 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css");
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-brands/css/uicons-brands.css');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .bg-img {
+        background-image: url("./assets/video/video1.mp4");
+    }
+
+    .bgimg {
+        background-image: url("./assets/images/round-text.png");
+    }
+
+    .bgConf {
+        background-color: #ccc;
+        background-blend-mode: multiply;
+        transition: all 0.25s linear;
+        filter: saturate(0%);
+    }
+
+    .bgConf:hover {
+        background-color: #fff;
+        filter: saturate(100%);
+    }
+
+    .sample1 {
+        background-image: url("./assets/images/sample/shopping.png");
+    }
+
+    .sample2 {
+        background-image: url("./assets/images/sample/todoList.png");
+    }
+
+    .sample3 {
+        background-image: url("./assets/images/sample/signup-form.png");
+    }
+
+    .sample4 {
+        background-image: url("./assets/images/sample/landing-page.png");
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .rtl-direction{
+        direction: rtl;
+    }
+    .ltr-direction{
+        direction: ltr;
+    }
+}
