@@ -1,12 +1,21 @@
-import {combineReducers, createStore} from "redux";
+import { combineReducers, createStore } from "redux";
 import Creducer from "./Color/ColorReducer";
-import Mreducer from "./ShowSettingMenu/ShowMenuReducer"
+import Mreducer from "./ShowSettingMenu/ShowMenuReducer";
 import backgroundReducer from "./Background/BackgroundReducer";
+import { ThemeState } from "./Theme/ThemeReducer";
+import ThemeReducer from "./Theme/ThemeReducer";
 
-const store = createStore(combineReducers({
+type RootState = {
+  theme: ThemeState;
+};
+
+const store = createStore(
+  combineReducers({
     Creducer,
     Mreducer,
-    backgroundReducer
-}));
+    backgroundReducer,
+    ThemeReducer,
+  })
+);
 
 export default store;
