@@ -16,6 +16,9 @@ export const variables = stylex.defineVars({
   "gray-500": "#6b7280",
   "gray-400": "#9ca3af",
   "gray-300": "#d1d5db",
-  "rgb-slate-700": "51, 65, 85",
   dynamicColor: "#3b82f6",
+
+  // rgb
+  "rgb-slate-700": "51, 65, 85",
+  "rgb-gray-900": "17, 24, 39",
 });

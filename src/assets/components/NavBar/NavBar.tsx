@@ -48,8 +48,8 @@ const NavBar = ({ activeSection, setActiveSection }: Props) => {
       {
         id: "projects",
         icon: <i className="fi fi-rr-grid" style={{ cursor: "pointer" }}></i>,
-        section: Sections.projects,
-        onclick: () => setActiveSection(Sections.projects),
+        section: Sections.experience,
+        onclick: () => setActiveSection(Sections.experience),
       },
       {
         id: "contact",

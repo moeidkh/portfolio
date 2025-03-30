@@ -32,6 +32,7 @@
     "react-scroll-trigger": "^0.6.14",
     "redux": "^4.2.1",
     "sweetalert2": "^11.7.12",
+    "swiper": "^11.2.6",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.2",
     "vite-plugin-stylex": "^0.13.0"
