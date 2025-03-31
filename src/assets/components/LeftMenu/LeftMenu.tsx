@@ -9,7 +9,7 @@ export enum Sections {
   timeline = "timeline",
   skills = "skills",
   experience = "experience",
-  request = "request",
+  languages = "languages",
 }
 
 const LeftMenu = () => {
@@ -64,8 +64,8 @@ const LeftMenu = () => {
       icon: (
         <i className="fi fi-rr-comment-alt" style={{ cursor: "pointer" }}></i>
       ),
-      section: Sections.request,
-      onclick: () => setActiveSection(Sections.request),
+      section: Sections.languages,
+      onclick: () => setActiveSection(Sections.languages),
     },
   ];
 

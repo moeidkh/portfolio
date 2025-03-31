@@ -56,8 +56,8 @@ const NavBar = ({ activeSection, setActiveSection }: Props) => {
         icon: (
           <i className="fi fi-rr-comment-alt" style={{ cursor: "pointer" }}></i>
         ),
-        section: Sections.request,
-        onclick: () => setActiveSection(Sections.request),
+        section: Sections.languages,
+        onclick: () => setActiveSection(Sections.languages),
       },
     ];
   }, []);

@@ -108,7 +108,7 @@ const TimeLine = (props: Props) => {
             }
           }}
         >
-          <div {...stylex.props(styles.timeLineWrapper)} id="timeline">
+          <div {...stylex.props(styles.timeLineWrapper)} id={Sections.timeline}>
             <div {...stylex.props(styles.timelineContainer)}>
               <Timeline
                 sx={{
@@ -119,7 +119,10 @@ const TimeLine = (props: Props) => {
                 }}
               >
                 {timelineEvents.map((event) => (
-                  <AnimatedTag boxVarient={getVariant(event.variant)}>
+                  <AnimatedTag
+                    boxVarient={getVariant(event.variant)}
+                    key={event.id}
+                  >
                     <TimelineItem>
                       <TimelineSeparator>
                         <TimelineDot />

@@ -1,7 +1,6 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import AnimatedTag from "../../shared/AnimatedTag";
 import NavBar from "./NavBar/NavBar";
-import Swal from "sweetalert2";
 import * as stylex from "@stylexjs/stylex";
 
 // functions
@@ -20,20 +19,10 @@ import Skills from "./Skills/Skills";
 import Experience from "./Experience/Experience";
 import Languages from "./Languages/Languages";
 
-const MainComponent = ({ color, bg }) => {
+const MainComponent = () => {
   const dispatch = useDispatch();
   const [month, year] = calcMonthAndYear();
-
   const [activeSection, setActiveSection] = useState<Sections>(Sections.intro);
-  const form = useRef();
-  const [formData, setFormData] = useState({
-    fullName: "",
-    Email: "",
-    phoneNumber: "",
-    Subject: "",
-    budge: "",
-    message: "",
-  });
 
   const boxVarient = {
     visible: { opacity: 1, x: "40px" },
@@ -52,27 +41,10 @@ const MainComponent = ({ color, bg }) => {
     hidden: { opacity: 0, x: "0", transitionDelay: 0.5 },
   };
 
-  const emailSender = (e) => {
-    e.preventDefault();
-    Swal.fire({
-      icon: "success",
-      title: "success",
-      text: "your request send.",
-    });
-    setFormData({
-      fullName: "",
-      Email: "",
-      phoneNumber: "",
-      Subject: "",
-      budge: "",
-      message: "",
-    });
-  };
-
   return (
     <div {...stylex.props(styles.container)}>
       <div {...stylex.props(styles.labelContainer)}>
-        <div key="title" {...stylex.props(styles.label)} id="introduce">
+        <div key="title" {...stylex.props(styles.label)} id={Sections.intro}>
           <i
             className="fi fi-rr-house-chimney"
             style={{ display: "flex", alignItems: "center" }}

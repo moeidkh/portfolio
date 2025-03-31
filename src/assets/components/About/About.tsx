@@ -16,7 +16,7 @@ const About = (props: Props) => {
     <div {...stylex.props(styles.aboutContainer)}>
       <AnimatedTag boxVarient={props.titleVarient}>
         <div {...stylex.props(styles.labelContainer)}>
-          <div key="title" {...stylex.props(styles.label)} id="aboutTitle">
+          <div key="title" {...stylex.props(styles.label)} id={Sections.about}>
             <i
               className="fi fi-rr-user"
               style={{ display: "flex", alignItems: "center" }}

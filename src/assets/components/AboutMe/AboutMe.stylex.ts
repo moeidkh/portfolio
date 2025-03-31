@@ -94,7 +94,7 @@ export const styles = stylex.create({
     borderRadius: "1rem",
     cursor: "pointer",
     fontSize: "1.5rem",
-    transition: "all 150ms ease-in-out",
+    transition: "all 0.25s linear",
     display: "flex",
     alignItems: "center",
     columnGap: "0.5rem",

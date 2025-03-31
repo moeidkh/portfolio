@@ -154,7 +154,7 @@ const Skills = ({
         <InView
           onChange={(inView) => inView && setActiveSection(Sections.skills)}
         >
-          <div {...stylex.props(styles.SkillContainer)} id="skills">
+          <div {...stylex.props(styles.SkillContainer)} id={Sections.skills}>
             <h1 {...stylex.props(styles.title)}>
               My{" "}
               <span {...stylex.props(globalStyles.dynamicColor)}>Skills</span>

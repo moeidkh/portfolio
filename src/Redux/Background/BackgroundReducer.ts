@@ -1,5 +1,5 @@
 const initialState = {
-    backgroundUrl: "./src/assets/video/video1.mp4"
+    backgroundUrl: "/video/video1.mp4"
 }
 
 const backgroundReducer = (state=initialState, action) => {

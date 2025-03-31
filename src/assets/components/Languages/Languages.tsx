@@ -37,9 +37,9 @@ const Languages = ({
 
       <AnimatedTag boxVarient={boxVarient}>
         <InView
-          onChange={(inView) => inView && setActiveSection(Sections.request)}
+          onChange={(inView) => inView && setActiveSection(Sections.languages)}
         >
-          <div {...stylex.props()} id="request">
+          <div {...stylex.props()} id={Sections.languages}>
             <AnimatedTag boxVarient={boxVarient}>
               <div {...stylex.props(styles.container)}>
                 <h1 {...stylex.props(styles.title)}>

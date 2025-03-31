@@ -93,22 +93,22 @@ const SettingMenu = () => {
       {
         id: "earth",
         name: "Earth Lines Sphere",
-        path: "./src/assets/video/video1.mp4",
+        path: "/video/video1.mp4",
       },
       {
         id: "abstract",
         name: "3D Abstract Ball",
-        path: "./src/assets/video/video2.mp4",
+        path: "/video/video2.mp4",
       },
       {
         id: "water",
         name: "Water Waves",
-        path: "./src/assets/video/video3.mp4",
+        path: "/video/video3.mp4",
       },
       {
         id: "liquids",
         name: "Liquids Wavy",
-        path: "./src/assets/video/video4.mp4",
+        path: "/video/video4.mp4",
       },
     ],
     []

@@ -78,7 +78,7 @@ Currently teaching at the Web Design Workshop of the Computer Science Associatio
               className="fi fi-rr-grid"
               style={{ display: "flex", alignItems: "center" }}
             ></i>
-            <p {...stylex.props(globalStyles.labelTitle)}>PROJECTS</p>
+            <p {...stylex.props(globalStyles.labelTitle)}>EXPERIENCE</p>
           </div>
         </div>
       </AnimatedTag>
