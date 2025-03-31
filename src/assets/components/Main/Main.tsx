@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import MainComponent from "../MainComponent";
-import AboutMe from "../AboutMe";
+import AboutMe from "../AboutMe/AboutMe";
 import * as stylex from "@stylexjs/stylex";
 import { useSelector } from "react-redux";
 import { variables } from "../../../Stylex/CssVariables.stylex";
