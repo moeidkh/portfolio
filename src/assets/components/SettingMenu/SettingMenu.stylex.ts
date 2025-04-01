@@ -46,11 +46,12 @@ export const styles = stylex.create({
     padding: "0.25rem",
     borderRadius: "50%",
     borderWidth: "2px",
+    borderStyle: "solid",
     borderColor: "transparent",
+    transition: "all 75ms cubic-bezier(0.4, 0, 0.2, 1)",
     ":hover": {
       borderColor: variables["gray-300"],
     },
-    transition: "all 75ms cubic-bezier(0.4, 0, 0.2, 1)",
   },
   menu: {
     display: "flex",

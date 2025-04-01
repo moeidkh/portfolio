@@ -1,5 +1,6 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
+import { color } from "framer-motion";
 
 const spin = stylex.keyframes({
   "0%": { transform: "rotate(0deg)" },
@@ -80,7 +81,7 @@ export const styles = stylex.create({
   social: {
     display: "flex",
     flexDirection: "column",
-    gap: "0.75rem"
+    gap: "0.75rem",
   },
   contactSection: {
     display: "flex",
@@ -104,10 +105,16 @@ export const styles = stylex.create({
     },
   },
   contactItemText: {
-    fontSize: "1rem"
+    fontSize: "1rem",
   },
   copyRight: {
     fontWeight: 500,
     color: variables["gray-600"],
-  }
+  },
+  mail: {
+    transition: "all 0.25s linear",
+    ":hover": {
+      color: variables["dynamicColor"],
+    },
+  },
 });

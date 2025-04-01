@@ -71,6 +71,8 @@ export const styles = stylex.create({
     display: "flex",
     alignItems: "center",
     gap: "5rem",
+    marginBlock: "4rem 2rem",
+    // marginBottom: "3rem"
   },
   monthExperience: {
     display: "flex",

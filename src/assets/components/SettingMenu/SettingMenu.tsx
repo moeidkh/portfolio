@@ -115,8 +115,10 @@ const SettingMenu = () => {
   );
 
   const activeBorder = useCallback(
-    (currentTheme: Themes) =>
-      themeName === currentTheme ? styles.activeMenuItem : null,
+    (currentTheme: Themes) => {
+      console.log(currentTheme, themeName);
+      return themeName === currentTheme ? styles.activeMenuItem : null;
+    },
     [themeName]
   );
 

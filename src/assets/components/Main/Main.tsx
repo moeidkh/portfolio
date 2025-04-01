@@ -24,22 +24,13 @@ const styles = stylex.create({
 });
 
 const Main = () => {
-  const color = useSelector(({ Creducer }) => Creducer.color);
-  const border = useSelector(({ Creducer }) => Creducer.border);
-  const bgColor = useSelector(({ Creducer }) => Creducer.bgColor);
   const showMenu = useSelector(({ Mreducer }) => Mreducer);
   const { theme } = useSelector(({ ThemeReducer }) => ThemeReducer);
 
-  const [colorS, setColorS] = useState(color);
-  const [bgColorS, setBgColorS] = useState(bgColor);
-  useEffect(() => {
-    setColorS(color);
-    setBgColorS(bgColor);
-  }, [color, border, bgColor]);
   return (
     <div {...stylex.props(styles.container, theme)}>
-      <AboutMe color={colorS} bg={bgColorS} />
-      <MainComponent color={colorS} bg={bgColorS} />
+      <AboutMe />
+      <MainComponent />
       {showMenu.settingMenu && <SettingMenu />}
       {showMenu.leftMenu && <LeftMenu />}
     </div>

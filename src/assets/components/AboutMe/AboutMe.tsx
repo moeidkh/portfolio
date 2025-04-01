@@ -6,12 +6,7 @@ import { styles } from "./AboutMe.stylex";
 import clsx from "clsx";
 import { FaGithub, FaLinkedin, FaPhone, FaTelegram } from "react-icons/fa";
 
-type Props = {
-  color: string;
-  bg: string;
-};
-
-const AboutMe = ({ color, bg }: Props) => {
+const AboutMe = () => {
   const dispatch = useDispatch();
 
   return (
@@ -41,7 +36,12 @@ const AboutMe = ({ color, bg }: Props) => {
         <img src="/prof.jpg" alt="" {...stylex.props(styles.image)} />
       </div>
       <div key="contact" {...stylex.props(styles.contactContainer)}>
-        <p>moeid.kh1381@gmail.com</p>
+        <a
+          href="mailto://moeid.kh1381@gmail.com"
+          {...stylex.props(styles.mail)}
+        >
+          <p>moeid.kh1381@gmail.com</p>
+        </a>
         <p>Based in Qom, IR</p>
       </div>
       <div key="social" {...stylex.props(styles.social)}>

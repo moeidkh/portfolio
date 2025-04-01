@@ -18,6 +18,7 @@ export const styles = stylex.create({
     justifyContent: "center",
     alignItems: "center",
     transition: "all 0.25s linear",
+    color: variables["gray-300"]
   },
   activeMenuItem: {
     color: variables["dynamicColor"],
