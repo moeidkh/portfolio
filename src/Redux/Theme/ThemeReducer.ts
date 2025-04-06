@@ -1,6 +1,4 @@
-import { variables } from "../../Stylex/CssVariables.stylex";
 import { Themes, ThemesMap } from "../../Stylex/Themes.stylex";
-import * as stylex from "@stylexjs/stylex";
 
 export type ThemeState = {
   themeName: Themes;

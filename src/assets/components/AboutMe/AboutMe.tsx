@@ -5,6 +5,8 @@ import * as stylex from "@stylexjs/stylex";
 import { styles } from "./AboutMe.stylex";
 import clsx from "clsx";
 import { FaGithub, FaLinkedin, FaPhone, FaTelegram } from "react-icons/fa";
+import { ModalAction } from "../../../Redux/Modal/ModalReducer";
+import { ModalTypes } from "../ModalManager/modal";
 
 const AboutMe = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,13 @@ const AboutMe = () => {
       <div
         key="settings"
         {...stylex.props(styles.settingsIconContainer)}
-        onClick={() => dispatch({ type: "SHOWSETTINGMENU", settingMenu: true })}
+        // onClick={() => dispatch({ type: "SHOWSETTINGMENU", settingMenu: true })}
+        onClick={() =>
+          dispatch({
+            type: ModalAction.OpenModal,
+            payload: { modalType: ModalTypes.SettingMenu },
+          })
+        }
       >
         <i
           {...stylex.props(styles.settingIcon)}

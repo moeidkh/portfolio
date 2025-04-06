@@ -9,6 +9,8 @@ import VideoComp from "./assets/components/VideoComp";
 import { variables } from "./Stylex/CssVariables.stylex";
 import { StylexUtils } from "./Stylex/styles.stylex";
 import { ThemeProvider } from "./contexts/ThemeProvider";
+import { Suspense } from "react";
+import ModalManager from "./assets/components/ModalManager/ModalManager";
 
 const breakpoints = {
   sm: "@media (max-width: 640px)",
@@ -38,6 +40,9 @@ function App() {
   return (
     <Provider store={store}>
       <ResetProvider>
+        <Suspense fallback={<div>مشکلی به وجود آمده است</div>}>
+          <ModalManager />
+        </Suspense>
         <ThemeProvider>
           <div {...containerStyles}>
             <VideoComp />

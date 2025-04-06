@@ -26,7 +26,7 @@ export function ThemeProvider({ children }: Props) {
 
   return (
     <ThemeContext.Provider value={{ themeName, theme }}>
-      <React.Fragment {...stylex.props(theme)}>{children}</React.Fragment>
+      <div {...stylex.props(theme)}>{children}</div>
     </ThemeContext.Provider>
   );
 }

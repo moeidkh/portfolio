@@ -4,6 +4,8 @@ import * as stylex from "@stylexjs/stylex";
 import { Themes } from "../../../Stylex/Themes.stylex";
 import { ThemesActionTypes } from "../../../Redux/Theme/ThemeReducer";
 import { styles } from "./SettingMenu.stylex";
+import { ModalAction } from "../../../Redux/Modal/ModalReducer";
+import { ModalTypes } from "../ModalManager/modal";
 
 interface ColorOption {
   id: string;
@@ -123,7 +125,10 @@ const SettingMenu = () => {
   );
 
   const handleCloseMenu = useCallback(() => {
-    dispatch({ type: "SHOWSETTINGMENU", settingMenu: false });
+    dispatch({
+      type: ModalAction.CloseModal,
+      modalType: ModalTypes.SettingMenu,
+    });
   }, []);
 
   const handleColorChange = useCallback((option: ColorOption) => {

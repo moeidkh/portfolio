@@ -4,10 +4,7 @@ import Mreducer from "./ShowSettingMenu/ShowMenuReducer";
 import backgroundReducer from "./Background/BackgroundReducer";
 import { ThemeState } from "./Theme/ThemeReducer";
 import ThemeReducer from "./Theme/ThemeReducer";
-
-type RootState = {
-  theme: ThemeState;
-};
+import { ModalReducer } from "./Modal/ModalReducer";
 
 const store = createStore(
   combineReducers({
@@ -15,6 +12,7 @@ const store = createStore(
     Mreducer,
     backgroundReducer,
     ThemeReducer,
+    ModalReducer,
   })
 );
 

@@ -7,6 +7,7 @@ import { variables } from "../../../Stylex/CssVariables.stylex";
 import SettingMenu from "../SettingMenu/SettingMenu";
 import { dynamicHeight } from "../../../Stylex/dynamicHeight.stylex";
 import LeftMenu from "../LeftMenu/LeftMenu";
+// import ModalManager from "../ModalManager/ModalManager";
 
 const breakpoints = {
   sm: "@media (max-width: 640px)",
@@ -36,8 +37,6 @@ const Main = () => {
   return (
     <div {...stylex.props(styles.container, theme)}>
       <MainComponent />
-      {showMenu.settingMenu && <SettingMenu />}
-      {showMenu.leftMenu && <LeftMenu />}
     </div>
   );
 };
