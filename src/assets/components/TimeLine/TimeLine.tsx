@@ -13,6 +13,7 @@ import {
 import { Sections } from "../LeftMenu/LeftMenu";
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./TimeLine.stylex";
+import { globalStyles } from "../../../Stylex/GlobalStyles.stylex";
 
 type Props = {
   titleVarient: Record<string, Object>;
@@ -89,13 +90,13 @@ const TimeLine = (props: Props) => {
   return (
     <>
       <AnimatedTag boxVarient={props.titleVarient}>
-        <div {...stylex.props(styles.labelContainer)}>
-          <div key="title" {...stylex.props(styles.label)} id="resume">
+        <div {...stylex.props(globalStyles.labelContainer)}>
+          <div key="title" {...stylex.props(globalStyles.label)} id="resume">
             <i
               className="fi fi-rr-briefcase"
               style={{ display: "flex", alignItems: "center" }}
             ></i>
-            <p {...stylex.props(styles.labelTitle)}>RESUME</p>
+            <p {...stylex.props(globalStyles.labelTitle)}>RESUME</p>
           </div>
         </div>
       </AnimatedTag>

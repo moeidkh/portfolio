@@ -4,6 +4,7 @@ import AnimatedTag from "../../../shared/AnimatedTag";
 import { InView } from "react-intersection-observer";
 import { Sections } from "../LeftMenu/LeftMenu";
 import { styles } from "./About.stylex";
+import { globalStyles } from "../../../Stylex/GlobalStyles.stylex";
 
 type Props = {
   boxVarient: Record<string, Object>;
@@ -15,13 +16,13 @@ const About = (props: Props) => {
   return (
     <div {...stylex.props(styles.aboutContainer)}>
       <AnimatedTag boxVarient={props.titleVarient}>
-        <div {...stylex.props(styles.labelContainer)}>
-          <div key="title" {...stylex.props(styles.label)} id={Sections.about}>
+        <div {...stylex.props(globalStyles.labelContainer)}>
+          <div key="title" {...stylex.props(globalStyles.label)} id={Sections.about}>
             <i
               className="fi fi-rr-user"
               style={{ display: "flex", alignItems: "center" }}
             ></i>
-            <p {...stylex.props(styles.labelTitle)}>ABOUT</p>
+            <p {...stylex.props(globalStyles.labelTitle)}>ABOUT</p>
           </div>
         </div>
       </AnimatedTag>

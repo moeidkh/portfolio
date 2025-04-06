@@ -19,6 +19,7 @@ import Skills from "./Skills/Skills";
 import Experience from "./Experience/Experience";
 import Languages from "./Languages/Languages";
 import AboutMe from "./AboutMe/AboutMe";
+import { globalStyles } from "../../Stylex/GlobalStyles.stylex";
 
 const MainComponent = () => {
   const dispatch = useDispatch();
@@ -46,13 +47,13 @@ const MainComponent = () => {
     <div {...stylex.props(styles.mainContainer)}>
       <AboutMe />
       <div {...stylex.props(styles.container)}>
-        <div {...stylex.props(styles.labelContainer)}>
-          <div key="title" {...stylex.props(styles.label)} id={Sections.intro}>
+        <div {...stylex.props(globalStyles.labelContainer)}>
+          <div key="title" {...stylex.props(globalStyles.label)} id={Sections.intro}>
             <i
               className="fi fi-rr-house-chimney"
               style={{ display: "flex", alignItems: "center" }}
             ></i>
-            <p {...stylex.props(styles.labelTitle)}>INTRODUCE</p>
+            <p {...stylex.props(globalStyles.labelTitle)}>INTRODUCE</p>
           </div>
           <div
             key="menuIcon"
