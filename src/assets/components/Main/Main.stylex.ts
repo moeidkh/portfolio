@@ -47,6 +47,9 @@ export const styles = stylex.create({
     transition: "all 0.25s linear",
     height: "2rem",
     width: "2rem",
+    position: { default: "static", [breakpoints.sm]: "fixed" },
+    top: "1.25rem",
+    right: "1.25rem",
   },
   label: {
     display: "flex",
