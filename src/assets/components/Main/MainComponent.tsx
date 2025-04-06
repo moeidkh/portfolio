@@ -1,30 +1,31 @@
 import { useState } from "react";
-import AnimatedTag from "../../shared/AnimatedTag";
-import NavBar from "./NavBar/NavBar";
+import AnimatedTag from "../../../shared/AnimatedTag";
+import NavBar from "../NavBar/NavBar";
 import * as stylex from "@stylexjs/stylex";
 
 // functions
-import { calcMonthAndYear } from "../functions/calcMonth";
+import { calcMonthAndYear } from "../../functions/calcMonth";
 
 // redux
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { InView } from "react-intersection-observer";
-import { styles } from "./Main/Main.stylex";
-import { Sections } from "./LeftMenu/LeftMenu";
-import Header from "./Header/Header";
-import About from "./About/About";
-import TimeLine from "./TimeLine/TimeLine";
-import Skills from "./Skills/Skills";
-import Experience from "./Experience/Experience";
-import Languages from "./Languages/Languages";
-import AboutMe from "./AboutMe/AboutMe";
-import { globalStyles } from "../../Stylex/GlobalStyles.stylex";
+import { styles } from "./Main.stylex";
+import { Sections } from "../LeftMenu/LeftMenu";
+import Header from "../Header/Header";
+import About from "../About/About";
+import TimeLine from "../TimeLine/TimeLine";
+import Skills from "../Skills/Skills";
+import Experience from "../Experience/Experience";
+import Languages from "../Languages/Languages";
+import AboutMe from "../AboutMe/AboutMe";
+import { globalStyles } from "../../../Stylex/GlobalStyles.stylex";
 
 const MainComponent = () => {
   const dispatch = useDispatch();
   const [month, year] = calcMonthAndYear();
   const [activeSection, setActiveSection] = useState<Sections>(Sections.intro);
+  const { theme } = useSelector(({ ThemeReducer }) => ThemeReducer);
 
   const boxVarient = {
     visible: { opacity: 1, x: "40px" },
@@ -44,7 +45,7 @@ const MainComponent = () => {
   };
 
   return (
-    <div {...stylex.props(styles.mainContainer)}>
+    <div {...stylex.props(styles.mainContainer, theme)}>
       <AboutMe />
       <div {...stylex.props(styles.container)}>
         <div {...stylex.props(globalStyles.labelContainer)}>

@@ -1,11 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
-import { color } from "framer-motion";
-import { borderColor } from "../../functions/hoverGenerator";
+
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
 
 export const styles = stylex.create({
   SkillContainer: {
-    // "w- flex flex-col gap-8",
     width: "100%",
     display: "flex",
     flexDirection: "column",
@@ -26,7 +29,8 @@ export const styles = stylex.create({
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
-    gap: "2rem"
+    gap: "2rem",
+    marginLeft: { default: "unset", [breakpoints.sm]: "-2rem" },
   },
   skillIcon: {
     width: "8rem",

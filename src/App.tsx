@@ -2,15 +2,13 @@ import { Provider } from "react-redux";
 import store from "./Redux/store";
 import * as stylex from "@stylexjs/stylex";
 import ResetProvider from "./contexts/StylesResetProvider";
-import { resetStyles } from "./Stylex/cssReset.stylex";
-
-import Main from "./assets/components/Main/Main";
 import VideoComp from "./assets/components/VideoComp";
 import { variables } from "./Stylex/CssVariables.stylex";
 import { StylexUtils } from "./Stylex/styles.stylex";
 import { ThemeProvider } from "./contexts/ThemeProvider";
 import { Suspense } from "react";
 import ModalManager from "./assets/components/ModalManager/ModalManager";
+import MainComponent from "./assets/components/Main/MainComponent";
 
 const breakpoints = {
   sm: "@media (max-width: 640px)",
@@ -47,7 +45,7 @@ function App() {
           <div {...containerStyles}>
             <VideoComp />
             <main {...mainStyles}>
-              <Main />
+              <MainComponent />
             </main>
           </div>
         </ThemeProvider>
