@@ -118,7 +118,6 @@ const SettingMenu = () => {
 
   const activeBorder = useCallback(
     (currentTheme: Themes) => {
-      console.log(currentTheme, themeName);
       return themeName === currentTheme ? styles.activeMenuItem : null;
     },
     [themeName]
@@ -152,10 +151,7 @@ const SettingMenu = () => {
   }, []);
 
   return (
-    <div
-      {...stylex.props(styles.settingMenuContainer)}
-      onClick={handleCloseMenu}
-    >
+    <div onClick={handleCloseMenu} {...stylex.props(styles.settingMenuContainer)}>
       <div {...stylex.props(styles.closeIcon)} onClick={handleCloseMenu}>
         <i className="fi fi-rr-cross" aria-hidden="true" />
       </div>

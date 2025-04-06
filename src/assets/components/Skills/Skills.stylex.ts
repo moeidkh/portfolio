@@ -29,8 +29,10 @@ export const styles = stylex.create({
     width: "100%",
     display: "flex",
     flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: { default: "unset", [breakpoints.sm]: "center" },
     gap: "2rem",
-    marginLeft: { default: "unset", [breakpoints.sm]: "-2rem" },
+    marginLeft: { default: "unset", [breakpoints.sm]: "-10%" },
   },
   skillIcon: {
     width: "8rem",

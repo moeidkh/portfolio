@@ -1,16 +1,15 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
 export const styles = stylex.create({
   container: {
-    width: "100%",
-    height: "100vh",
-    position: "absolute",
-    zIndex: 6,
-    backgroundColor: `rgba(${variables["rgb-slate-700"]}, 0.6)`,
-    left: 0,
-    direction: "rtl",
-    backdropFilter: "blur(4px)",
+    color: variables.white,
   },
   closeBtnContainer: {
     position: "absolute",
@@ -26,8 +25,8 @@ export const styles = stylex.create({
     transition: "all 0.25s linear",
   },
   menuContainer: {
-    width: "20%",
-    height: "100%",
+    width: { default: "20%", [breakpoints.sm]: "100%" },
+    height: { default: "100%", [breakpoints.sm]: "100dvh" },
     backgroundColor: variables["gray-900"],
     display: "flex",
     flexDirection: "column",

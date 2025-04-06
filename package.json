@@ -21,6 +21,7 @@
     "@types/axios": "^0.14.4",
     "@types/react-router-dom": "^5.3.3",
     "animated-number-react": "^0.1.2",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "chalk": "^5.4.1",
     "clsx": "^2.1.1",
     "framer-motion": "^10.12.16",

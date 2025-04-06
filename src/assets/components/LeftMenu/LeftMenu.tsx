@@ -1,7 +1,9 @@
-import { useCallback, useState } from "react";
+import { act, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./LeftMenu.stylex";
+import { ModalAction } from "../../../Redux/Modal/ModalReducer";
+import { ModalTypes } from "../ModalManager/modal";
 
 export enum Sections {
   intro = "intro",
@@ -16,6 +18,19 @@ const LeftMenu = () => {
   const [activeSection, setActiveSection] = useState<Sections>(Sections.intro);
   const dispatch = useDispatch();
 
+  const handleActiveSection = useCallback(
+    (section: Sections) => {
+      if (activeSection !== section) {
+        setActiveSection(section);
+        dispatch({
+          type: ModalAction.CloseModal,
+          payload: { modalType: ModalTypes.LeftMenu },
+        });
+      }
+    },
+    [activeSection]
+  );
+
   const menuData = [
     {
       id: "introduction",
@@ -24,14 +39,14 @@ const LeftMenu = () => {
         <i className="fi fi-rr-house-chimney" style={{ cursor: "pointer" }}></i>
       ),
       section: Sections.intro,
-      onclick: () => setActiveSection(Sections.intro),
+      onclick: () => handleActiveSection(Sections.intro),
     },
     {
       id: "about",
       title: "About",
       icon: <i className="fi fi-rr-user" style={{ cursor: "pointer" }}></i>,
       section: Sections.about,
-      onclick: () => setActiveSection(Sections.about),
+      onclick: () => handleActiveSection(Sections.about),
     },
     {
       id: "timeline",
@@ -40,7 +55,7 @@ const LeftMenu = () => {
         <i className="fi fi-rr-briefcase" style={{ cursor: "pointer" }}></i>
       ),
       section: Sections.timeline,
-      onclick: () => setActiveSection(Sections.timeline),
+      onclick: () => handleActiveSection(Sections.timeline),
     },
     {
       id: "skills",
@@ -49,23 +64,23 @@ const LeftMenu = () => {
         <i className="fi fi-rr-resources" style={{ cursor: "pointer" }}></i>
       ),
       section: Sections.skills,
-      onclick: () => setActiveSection(Sections.skills),
+      onclick: () => handleActiveSection(Sections.skills),
     },
     {
-      id: "projects",
-      title: "Projects",
+      id: "experience",
+      title: "experience",
       icon: <i className="fi fi-rr-grid" style={{ cursor: "pointer" }}></i>,
       section: Sections.experience,
-      onclick: () => setActiveSection(Sections.experience),
+      onclick: () => handleActiveSection(Sections.experience),
     },
     {
-      id: "contact",
-      title: "Contact",
+      id: "Languages",
+      title: "Languages",
       icon: (
         <i className="fi fi-rr-comment-alt" style={{ cursor: "pointer" }}></i>
       ),
       section: Sections.languages,
-      onclick: () => setActiveSection(Sections.languages),
+      onclick: () => handleActiveSection(Sections.languages),
     },
   ];
 
@@ -93,7 +108,7 @@ const LeftMenu = () => {
       >
         <ul {...stylex.props(styles.menu)}>
           {menuData.map((menuItem) => (
-            <a href={`#${menuItem.id}`}>
+            <a href={`#${menuItem.id}`} key={menuItem.id}>
               <li
                 {...stylex.props(
                   styles.menuItem,

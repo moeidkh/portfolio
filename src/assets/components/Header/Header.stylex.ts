@@ -37,8 +37,8 @@ export const styles = stylex.create({
   AnchorButtonContainer: {
     width: "100%",
     display: "flex",
-    justifyContent: "flex-end",
-    paddingRight: "4rem",
+    justifyContent: {default: "flex-end", [breakpoints.sm]: "center"},
+    paddingRight: {default: "4rem", [breakpoints.sm]: "unset"},
     paddingTop: "2.5rem",
   },
   AnchorButton: {
@@ -46,10 +46,14 @@ export const styles = stylex.create({
     position: "relative",
     display: "flex",
     borderRadius: "50%",
-    justifyContent: "flex-end",
+    justifyContent: {default: "flex-end", [breakpoints.sm]: "center"},
     border: `1px solid ${variables["gray-500"]}`,
     padding: "1rem",
     cursor: "pointer",
+  },
+  image: {
+    width: "12rem",
+    height: "12rem",
   },
   spinAnimate: {
     animationName: spin,

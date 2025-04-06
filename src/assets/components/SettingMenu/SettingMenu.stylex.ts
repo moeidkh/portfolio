@@ -2,17 +2,15 @@ import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
 import { dynamicHeight } from "../../../Stylex/dynamicHeight.stylex";
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
 export const styles = stylex.create({
   settingMenuContainer: {
-    width: "100%",
-    position: "absolute",
-    left: 0,
-    direction: "rtl",
-    zIndex: 6,
-    backgroundColor: `rgba(${variables["rgb-slate-700"]}, 0.6)`,
-    height: "100vh",
-    backdropFilter: "blur(4px)",
-    ...dynamicHeight,
+    color: variables.white,
   },
   closeIcon: {
     position: "absolute",
@@ -28,18 +26,19 @@ export const styles = stylex.create({
     transition: "all 0.25s linear",
   },
   menuContainer: {
-    width: "35%",
-    height: "100%",
+    width: { default: "35%", [breakpoints.sm]: "100%" },
+    height: { default: "100vh", [breakpoints.sm]: "100dvh" },
     backgroundColor: variables["gray-900"],
     direction: "ltr",
     display: "flex",
     flexDirection: "column",
+    justifyContent: { default: "center", [breakpoints.sm]: "flex-start" },
+    paddingTop: { default: "unset", [breakpoints.sm]: "7rem" },
+    alignItems: "center",
     gap: "3rem",
-    justifyContent: "center",
-    padding: "6rem",
   },
   menuTitle: {
-    fontSize: "2.25rem",
+    fontSize: { default: "2.25rem", [breakpoints.sm]: "2.5rem" },
     lineHeight: "2.5rem",
   },
   menuItem: {
@@ -54,7 +53,11 @@ export const styles = stylex.create({
     },
   },
   menu: {
+    width: { default: "100%", [breakpoints.sm]: "80%" },
     display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
     gap: "1rem",
   },
   activeMenuItem: {
@@ -96,18 +99,24 @@ export const styles = stylex.create({
   backgroundOptionWrapper: {
     display: "flex",
     flexDirection: "column",
+    alignItems: { default: "unset", [breakpoints.sm]: "center" },
     gap: "2rem",
   },
   backgroundOptionTitle: {
-    fontSize: "1.25rem",
+    fontSize: { default: "1.25rem", [breakpoints.sm]: "1.5rem" },
     lineHeight: "1.75rem",
+    paddingLeft: { default: "unset", [breakpoints.sm]: "1rem" },
+    paddingTop: { default: "unset", [breakpoints.sm]: "1rem" },
+    fontWeight: "600",
   },
   backgroundOptionsContainer: {
     display: "flex",
-    gap: "2rem",
+    flexWrap: "wrap",
+    justifyContent: { default: "unset", [breakpoints.sm]: "center" },
+    gap: {default: "2rem", [breakpoints.sm]: "1rem"},
     fontSize: "0.875rem",
     lineHeight: "1.25rem",
-    width: "100%",
+    width: { default: "100%", [breakpoints.sm]: "80%" },
   },
   backgroundOption: {
     cursor: "pointer",
@@ -117,10 +126,11 @@ export const styles = stylex.create({
     },
     transition: "all 0.1s linear",
     border: `1px solid ${variables["gray-600"]}`,
-    padding: "0.5rem",
+    padding: {default:"0.5rem", [breakpoints.sm]: "0.75rem"},
+    color: variables["gray-200"],
     borderRadius: "0.5rem",
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
 });

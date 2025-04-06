@@ -20,13 +20,11 @@ export const ModalReducer = (
 ) => {
   switch (action.type) {
     case ModalAction.OpenModal:
-      console.log(">>>>>>>>>>modals", action);
       return {
         ...state,
         ...action.payload,
       };
     case ModalAction.CloseModal:
-      console.log(">>>>>>>>>>modals", action);
       return {
         ...state,
         modalType: undefined,

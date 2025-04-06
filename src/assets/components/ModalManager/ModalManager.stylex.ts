@@ -9,6 +9,8 @@ export const styles = stylex.create({
     position: "absolute",
     top: 0,
     zIndex: 5,
-    overflow: "hidden"
+    overflow: "hidden",
+    backdropFilter: "blur(4px)",
+    direction: "rtl",
   },
 });

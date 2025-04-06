@@ -20,6 +20,8 @@ import Experience from "../Experience/Experience";
 import Languages from "../Languages/Languages";
 import AboutMe from "../AboutMe/AboutMe";
 import { globalStyles } from "../../../Stylex/GlobalStyles.stylex";
+import { ModalAction } from "../../../Redux/Modal/ModalReducer";
+import { ModalTypes } from "../ModalManager/modal";
 
 const MainComponent = () => {
   const dispatch = useDispatch();
@@ -65,7 +67,10 @@ const MainComponent = () => {
           <div
             key="menuIcon"
             onClick={() => {
-              dispatch({ type: "SHOWLEFTMENU", leftMenu: true });
+              dispatch({
+                type: ModalAction.OpenModal,
+                payload: { modalType: ModalTypes.LeftMenu },
+              });
             }}
             {...stylex.props(styles.menuIcon)}
           >

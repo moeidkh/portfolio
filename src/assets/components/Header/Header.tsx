@@ -1,6 +1,7 @@
 import React from "react";
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./Header.stylex";
+import { Sections } from "../LeftMenu/LeftMenu";
 
 const Header = () => {
   return (
@@ -16,22 +17,22 @@ const Header = () => {
         </p>
       </div>
       <div {...stylex.props(styles.AnchorButtonContainer)}>
-        <a href="#projects">
+        <a href={`#${Sections.experience}`}>
           <div {...stylex.props(styles.AnchorButton)}>
             <img
-              src="/RoundText.png"
+              src="/MyExperience.png"
               alt="text"
-              {...stylex.props(styles.spinAnimate)}
+              {...stylex.props(styles.spinAnimate, styles.image)}
             />
             <i
               className="fi fi-rr-arrow-down"
               style={{
                 display: "flex",
                 position: "absolute",
-                fontSize: "1.5erm",
+                fontSize: "1.5rem",
                 lineHeight: "2rem",
-                top: "80px",
-                right: "76px",
+                top: "calc(50% - 0.75rem)",
+                right: "calc(50% - 0.75rem)",
               }}
             ></i>
           </div>

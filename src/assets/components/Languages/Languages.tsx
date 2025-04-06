@@ -23,7 +23,11 @@ const Languages = ({ boxVarient, setActiveSection, titleVarient }: Props) => {
     <>
       <AnimatedTag boxVarient={titleVarient}>
         <div {...stylex.props(globalStyles.labelContainer)}>
-          <div key="title" {...stylex.props(globalStyles.label)} id="contact">
+          <div
+            key="title"
+            {...stylex.props(globalStyles.label)}
+            id={Sections.languages}
+          >
             <i
               className="fi fi-rr-comment-alt"
               style={{ display: "flex", alignItems: "center" }}

@@ -11,8 +11,14 @@ const ModalManager = () => {
   const modal = useSelector(({ ModalReducer }) => ModalReducer);
   const { theme } = useSelector(({ ThemeReducer }) => ThemeReducer);
 
-  if (modal.modalType === undefined) return null;
-  const ModalComponent = modals[modal.modalType];
+  useEffect(() => {
+    if (modal.modalType) {
+      document.body.style.overflow = "hidden";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [modal.modalType]);
 
   const dimOnclickHandler = () => {
     dispatch({
@@ -20,6 +26,8 @@ const ModalManager = () => {
       payload: { modalType: modal.modalType },
     });
   };
+  if (modal.modalType === undefined) return null;
+  const ModalComponent = modals[modal.modalType];
 
   const children = (
     <div {...stylex.props(styles.container, theme)} onClick={dimOnclickHandler}>
