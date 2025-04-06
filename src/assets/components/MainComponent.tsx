@@ -18,6 +18,7 @@ import TimeLine from "./TimeLine/TimeLine";
 import Skills from "./Skills/Skills";
 import Experience from "./Experience/Experience";
 import Languages from "./Languages/Languages";
+import AboutMe from "./AboutMe/AboutMe";
 
 const MainComponent = () => {
   const dispatch = useDispatch();
@@ -42,95 +43,98 @@ const MainComponent = () => {
   };
 
   return (
-    <div {...stylex.props(styles.container)}>
-      <div {...stylex.props(styles.labelContainer)}>
-        <div key="title" {...stylex.props(styles.label)} id={Sections.intro}>
-          <i
-            className="fi fi-rr-house-chimney"
-            style={{ display: "flex", alignItems: "center" }}
-          ></i>
-          <p {...stylex.props(styles.labelTitle)}>INTRODUCE</p>
+    <div {...stylex.props(styles.mainContainer)}>
+      <AboutMe />
+      <div {...stylex.props(styles.container)}>
+        <div {...stylex.props(styles.labelContainer)}>
+          <div key="title" {...stylex.props(styles.label)} id={Sections.intro}>
+            <i
+              className="fi fi-rr-house-chimney"
+              style={{ display: "flex", alignItems: "center" }}
+            ></i>
+            <p {...stylex.props(styles.labelTitle)}>INTRODUCE</p>
+          </div>
+          <div
+            key="menuIcon"
+            onClick={() => {
+              dispatch({ type: "SHOWLEFTMENU", leftMenu: true });
+            }}
+            {...stylex.props(styles.menuIcon)}
+          >
+            <i className="fi fi-rr-apps"></i>
+          </div>
         </div>
-        <div
-          key="menuIcon"
-          onClick={() => {
-            dispatch({ type: "SHOWLEFTMENU", leftMenu: true });
-          }}
-          {...stylex.props(styles.menuIcon)}
-        >
-          <i className="fi fi-rr-apps"></i>
-        </div>
-      </div>
-      <div {...stylex.props(styles.HeaderContainer)}>
-        <div {...stylex.props(styles.navbarContainer)}>
-          <NavBar
-            activeSection={activeSection}
+        <div {...stylex.props(styles.HeaderContainer)}>
+          <div {...stylex.props(styles.navbarContainer)}>
+            <NavBar
+              activeSection={activeSection}
+              setActiveSection={setActiveSection}
+            />
+          </div>
+          <AnimatedTag boxVarient={boxVarient}>
+            <InView
+              onChange={(inView) => inView && setActiveSection(Sections.intro)}
+            >
+              <Header />
+            </InView>
+            <AnimatedTag boxVarient={boxVarient}>
+              <div {...stylex.props(styles.experienceContainer)}>
+                <div {...stylex.props(styles.monthExperience)}>
+                  <div {...stylex.props(styles.experienceNumber)}>{month}</div>
+                  <div {...stylex.props(styles.experienceDescription)}>
+                    MONTHS OF <br />
+                    EXPERIENCE AND LEARNING
+                  </div>
+                </div>
+                <div {...stylex.props(styles.monthExperience)}>
+                  <div {...stylex.props(styles.experienceNumber)}>+{year}</div>
+                  <div {...stylex.props(styles.experienceDescription)}>
+                    YEARS OF <br />
+                    EXPERIENCE AND LEARNING
+                  </div>
+                </div>
+              </div>
+            </AnimatedTag>
+          </AnimatedTag>
+
+          <About
+            boxVarient={boxVarient}
+            titleVarient={titleVarient}
+            setActiveSection={setActiveSection}
+          />
+
+          <Skills
+            boxVarient={boxVarient}
+            titleVarient={titleVarient}
+            boxVarientDown={boxVarientDown}
+            boxVarientLeft={boxVarientLeft}
+            setActiveSection={setActiveSection}
+          />
+
+          <TimeLine
+            boxVarient={boxVarient}
+            titleVarient={titleVarient}
+            boxVarientDown={boxVarientDown}
+            boxVarientLeft={boxVarientLeft}
+            setActiveSection={setActiveSection}
+          />
+
+          <Experience
+            boxVarient={boxVarient}
+            titleVarient={titleVarient}
+            boxVarientDown={boxVarientDown}
+            boxVarientLeft={boxVarientLeft}
+            setActiveSection={setActiveSection}
+          />
+
+          <Languages
+            boxVarient={boxVarient}
+            titleVarient={titleVarient}
+            boxVarientDown={boxVarientDown}
+            boxVarientLeft={boxVarientLeft}
             setActiveSection={setActiveSection}
           />
         </div>
-        <AnimatedTag boxVarient={boxVarient}>
-          <InView
-            onChange={(inView) => inView && setActiveSection(Sections.intro)}
-          >
-            <Header />
-          </InView>
-          <AnimatedTag boxVarient={boxVarient}>
-            <div {...stylex.props(styles.experienceContainer)}>
-              <div {...stylex.props(styles.monthExperience)}>
-                <div {...stylex.props(styles.experienceNumber)}>{month}</div>
-                <div {...stylex.props(styles.experienceDescription)}>
-                  MONTHS OF <br />
-                  EXPERIENCE AND LEARNING
-                </div>
-              </div>
-              <div {...stylex.props(styles.monthExperience)}>
-                <div {...stylex.props(styles.experienceNumber)}>+{year}</div>
-                <div {...stylex.props(styles.experienceDescription)}>
-                  YEARS OF <br />
-                  EXPERIENCE AND LEARNING
-                </div>
-              </div>
-            </div>
-          </AnimatedTag>
-        </AnimatedTag>
-
-        <About
-          boxVarient={boxVarient}
-          titleVarient={titleVarient}
-          setActiveSection={setActiveSection}
-        />
-
-        <Skills
-          boxVarient={boxVarient}
-          titleVarient={titleVarient}
-          boxVarientDown={boxVarientDown}
-          boxVarientLeft={boxVarientLeft}
-          setActiveSection={setActiveSection}
-        />
-
-        <TimeLine
-          boxVarient={boxVarient}
-          titleVarient={titleVarient}
-          boxVarientDown={boxVarientDown}
-          boxVarientLeft={boxVarientLeft}
-          setActiveSection={setActiveSection}
-        />
-
-        <Experience
-          boxVarient={boxVarient}
-          titleVarient={titleVarient}
-          boxVarientDown={boxVarientDown}
-          boxVarientLeft={boxVarientLeft}
-          setActiveSection={setActiveSection}
-        />
-
-        <Languages
-          boxVarient={boxVarient}
-          titleVarient={titleVarient}
-          boxVarientDown={boxVarientDown}
-          boxVarientLeft={boxVarientLeft}
-          setActiveSection={setActiveSection}
-        />
       </div>
     </div>
   );

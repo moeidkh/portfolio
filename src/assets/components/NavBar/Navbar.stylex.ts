@@ -1,9 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
 
 export const styles = stylex.create({
   navBarContainer: {
-    display: "flex",
+    display: { default: "flex", [breakpoints.sm]: "none" },
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
@@ -18,7 +23,7 @@ export const styles = stylex.create({
     justifyContent: "center",
     alignItems: "center",
     transition: "all 0.25s linear",
-    color: variables["gray-300"]
+    color: variables["gray-300"],
   },
   activeMenuItem: {
     color: variables["dynamicColor"],

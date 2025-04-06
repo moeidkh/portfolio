@@ -1,7 +1,22 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
 export const styles = stylex.create({
+  mainContainer: {
+    display: "flex",
+    flexDirection: { default: "row", [breakpoints.sm]: "column" },
+    alignItems: "center",
+    gap: "3rem",
+    overflowX: "hidden",
+    overflowY: "scroll",
+    position: "relative",
+  },
   container: {
     width: "100%",
     height: "100vh",
@@ -9,7 +24,6 @@ export const styles = stylex.create({
     display: "flex",
     flexDirection: "column",
     gap: "0.5rem",
-    overflowY: "scroll",
   },
   labelContainer: {
     width: "100%",
@@ -90,6 +104,6 @@ export const styles = stylex.create({
     color: variables["gray-500"],
     fontSize: "1rem",
     lineHeight: "1.5rem",
-    textAlign: "center"
+    textAlign: "center",
   },
 });

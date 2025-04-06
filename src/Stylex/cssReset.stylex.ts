@@ -10,7 +10,6 @@ export const resetStyles = stylex.create({
     boxSizing: "border-box",
 
     // Typography reset
-    fontSize: "100%",
     font: "inherit",
     verticalAlign: "baseline",
 
@@ -26,16 +25,4 @@ export const resetStyles = stylex.create({
     // Remove outline (add proper focus styles later)
     outline: "none",
   },
-});
-
-// Apply to all elements using a global style
-export const globalReset = stylex.create({
-  html: {
-    lineHeight: 1.15,
-    WebkitTextSizeAdjust: "100%",
-  },
-  body: {
-    margin: 0,
-  },
-  // Add more element-specific resets as needed
 });

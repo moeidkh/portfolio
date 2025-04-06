@@ -1,6 +1,11 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
-import { color } from "framer-motion";
+
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
 
 const spin = stylex.keyframes({
   "0%": { transform: "rotate(0deg)" },
@@ -10,7 +15,7 @@ const spin = stylex.keyframes({
 export const styles = stylex.create({
   container: {
     width: "22.5rem",
-    height: "100%",
+    height: "90vh",
     borderRadius: "2rem",
     border: `1px solid ${variables["gray-600"]}`,
     display: "flex",
@@ -18,9 +23,10 @@ export const styles = stylex.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: "1.25rem",
-    position: "relative",
-    marginLeft: "0.75rem",
+    position: { default: "sticky", [breakpoints.sm]: "relative" },
+    top: "3rem",
     padding: "1.25rem 0.5rem 1.5rem",
+    marginLeft: {default: "2.5rem", [breakpoints.sm]: "unset"},
   },
   settingsIconContainer: {
     position: "absolute",

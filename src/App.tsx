@@ -9,7 +9,12 @@ import VideoComp from "./assets/components/VideoComp";
 import { variables } from "./Stylex/CssVariables.stylex";
 import { StylexUtils } from "./Stylex/styles.stylex";
 import { ThemeProvider } from "./contexts/ThemeProvider";
-import { Themes } from "./Stylex/Themes.stylex";
+
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
 
 const styles = stylex.create({
   container: {
@@ -21,8 +26,8 @@ const styles = stylex.create({
     color: variables.white,
   },
   main: {
-    maxWidth: "124rem",
-    backdropFilter: "blur(3px)"
+    maxWidth: { default: "124rem", [breakpoints.sm]: "100%" },
+    backdropFilter: "blur(3px)",
   },
 });
 

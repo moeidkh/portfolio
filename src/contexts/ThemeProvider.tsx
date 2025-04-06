@@ -1,5 +1,5 @@
 // ThemeContext.jsx
-import { createContext, ReactNode, useContext, useState } from "react";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 import * as stylex from "@stylexjs/stylex";
 import { Themes, ThemesMap } from "../Stylex/Themes.stylex";
 import { variables } from "../Stylex/CssVariables.stylex";
@@ -26,7 +26,7 @@ export function ThemeProvider({ children }: Props) {
 
   return (
     <ThemeContext.Provider value={{ themeName, theme }}>
-      <div {...stylex.props(theme)}>{children}</div>
+      <React.Fragment {...stylex.props(theme)}>{children}</React.Fragment>
     </ThemeContext.Provider>
   );
 }
