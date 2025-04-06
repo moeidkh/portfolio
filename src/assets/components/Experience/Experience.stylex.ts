@@ -51,7 +51,8 @@ export const styles = stylex.create({
     marginTop: "2rem",
   },
   arrow: {
-    width: "fit-content",
+    width: "3rem",
+    height: "3rem",
     padding: "0.5rem",
     fontSize: "2rem",
     fontWeight: 100,
@@ -64,6 +65,9 @@ export const styles = stylex.create({
     },
     cursor: "pointer",
     transition: "all 0.25s linear",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   },
   swiperCounter: {
     display: "flex",

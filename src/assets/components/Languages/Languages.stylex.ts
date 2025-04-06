@@ -1,6 +1,14 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
+
+
 export const styles = stylex.create({
   container: {
     display: "flex",
@@ -8,20 +16,22 @@ export const styles = stylex.create({
     gap: "2rem",
   },
   title: {
-    fontSize: "2.25rem",
+    fontSize: {default:"2.25rem", [breakpoints.sm]: "2rem"},
+    marginLeft: "-2rem"
   },
   languageContainer: {
-    width: "50%",
+    width: "100%",
     display: "flex",
+    flexDirection: {default: "row", [breakpoints.sm]: "column"},
     alignItems: "center",
-    justifyContent: "space-between",
     gap: "2rem",
+    marginLeft: {default: 0 , [breakpoints.sm]: "-2rem"}
   },
   level: {
     color: variables["gray-400"],
   },
   language: {
-    width: "30rem",
+    width: {default: "20rem", [breakpoints.sm]: "15rem"},
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",

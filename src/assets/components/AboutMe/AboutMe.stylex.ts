@@ -15,7 +15,7 @@ const spin = stylex.keyframes({
 export const styles = stylex.create({
   container: {
     width: "22.5rem",
-    height: "90vh",
+    height: {default: "90vh", [breakpoints.sm]: "50rem"},
     borderRadius: "2rem",
     border: `1px solid ${variables["gray-600"]}`,
     display: "flex",

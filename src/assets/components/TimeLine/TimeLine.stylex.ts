@@ -33,6 +33,7 @@ export const styles = stylex.create({
   },
   companyName: {
     fontSize: "0.875rem",
+    lineHeight: "1.25rem",
     color: variables["gray-500"],
   },
 });

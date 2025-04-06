@@ -14,13 +14,11 @@ type Props = {
   setActiveSection: (section: Sections) => void;
 };
 
-const Languages = ({
-  boxVarient,
-  boxVarientDown,
-  boxVarientLeft,
-  setActiveSection,
-  titleVarient,
-}: Props) => {
+const Languages = ({ boxVarient, setActiveSection, titleVarient }: Props) => {
+  const languages = [
+    { name: "English", level: "Intermediate" },
+    { name: "Persian", level: "Native" },
+  ];
   return (
     <>
       <AnimatedTag boxVarient={titleVarient}>
@@ -50,14 +48,12 @@ const Languages = ({
                 </h1>
 
                 <div {...stylex.props(styles.languageContainer)}>
-                  <div {...stylex.props(styles.language)}>
-                    <p>English</p>
-                    <p {...stylex.props(styles.level)}>Intermediate</p>
-                  </div>
-                  <div {...stylex.props(styles.language)}>
-                    <p>Persian</p>
-                    <p {...stylex.props(styles.level)}>Native</p>
-                  </div>
+                  {languages.map((lang, index) => (
+                    <div key={index} {...stylex.props(styles.language)}>
+                      <p>{lang.name}</p>
+                      <p {...stylex.props(styles.level)}>{lang.level}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </AnimatedTag>

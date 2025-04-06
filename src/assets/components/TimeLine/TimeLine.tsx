@@ -56,7 +56,7 @@ const TimeLine = (props: Props) => {
     {
       id: "qom-univ-instructor",
       period: "2022 - 2024",
-      title: "Front-End Development Instructor | Web Design Workshop",
+      title: "Front-End Development Instructor | Workshop",
       description: "",
       link: "https://qom.ac.ir",
       linkText: "Qom University",
