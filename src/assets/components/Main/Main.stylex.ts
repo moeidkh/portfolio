@@ -87,9 +87,10 @@ export const styles = stylex.create({
   experienceContainer: {
     display: "flex",
     alignItems: "center",
-    gap: "5rem",
+    justifyContent: "center",
+    gap: { default: "5rem", [breakpoints.sm]: "1rem" },
     marginBlock: "4rem 2rem",
-    // marginBottom: "3rem"
+    marginLeft: { default: "unset", [breakpoints.sm]: "-4rem" },
   },
   monthExperience: {
     display: "flex",

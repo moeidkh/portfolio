@@ -1,6 +1,12 @@
 import * as stylex from "@stylexjs/stylex";
 import { variables } from "../../../Stylex/CssVariables.stylex";
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
 const spin = stylex.keyframes({
   "0%": { transform: "rotate(0deg)" },
   "100%": { transform: "rotate(360deg)" },
@@ -21,7 +27,7 @@ export const styles = stylex.create({
     gap: "2rem",
   },
   title: {
-    fontSize: "4.875rem",
+    fontSize: {default: "4.875rem", [breakpoints.sm]: "3.5rem"},
     fontWeight: 300,
   },
   description: {

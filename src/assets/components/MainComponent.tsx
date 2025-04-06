@@ -48,13 +48,19 @@ const MainComponent = () => {
       <AboutMe />
       <div {...stylex.props(styles.container)}>
         <div {...stylex.props(globalStyles.labelContainer)}>
-          <div key="title" {...stylex.props(globalStyles.label)} id={Sections.intro}>
-            <i
-              className="fi fi-rr-house-chimney"
-              style={{ display: "flex", alignItems: "center" }}
-            ></i>
-            <p {...stylex.props(globalStyles.labelTitle)}>INTRODUCE</p>
-          </div>
+          <AnimatedTag boxVarient={titleVarient}>
+            <div
+              key="title"
+              {...stylex.props(globalStyles.label)}
+              id={Sections.intro}
+            >
+              <i
+                className="fi fi-rr-house-chimney"
+                style={{ display: "flex", alignItems: "center" }}
+              ></i>
+              <p {...stylex.props(globalStyles.labelTitle)}>INTRODUCE</p>
+            </div>
+          </AnimatedTag>
           <div
             key="menuIcon"
             onClick={() => {
