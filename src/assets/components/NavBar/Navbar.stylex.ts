@@ -8,7 +8,7 @@ const breakpoints = {
 
 export const styles = stylex.create({
   navBarContainer: {
-    display: { default: "flex", [breakpoints.sm]: "none" },
+    display: { default: "flex", [breakpoints.lg]: "none" },
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",

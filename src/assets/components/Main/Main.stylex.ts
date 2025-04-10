@@ -4,13 +4,14 @@ import { variables } from "../../../Stylex/CssVariables.stylex";
 const breakpoints = {
   sm: "@media (max-width: 640px)",
   md: "@media (max-width: 768px)",
+  lmd: "@media (max-width: 820px)",
   lg: "@media (max-width: 1024px)",
 };
 
 export const styles = stylex.create({
   mainContainer: {
     display: "flex",
-    flexDirection: { default: "row", [breakpoints.sm]: "column" },
+    flexDirection: { default: "row", [breakpoints.md]: "column" },
     alignItems: "center",
     gap: "3rem",
     overflowX: "hidden",
@@ -47,7 +48,7 @@ export const styles = stylex.create({
     transition: "all 0.25s linear",
     height: "2rem",
     width: "2rem",
-    position: { default: "static", [breakpoints.sm]: "fixed" },
+    position: { default: "static", [breakpoints.md]: "fixed" },
     top: "1.25rem",
     right: "1.25rem",
   },
@@ -64,7 +65,7 @@ export const styles = stylex.create({
     fontWeight: 500,
   },
   HeaderContainer: {
-    width: "80%",
+    width: {default: "80%", [breakpoints.md]: "80%", [breakpoints.lmd]: "40%", [breakpoints.lg]: "50%"},
     display: "flex",
     flexDirection: "column",
     gap: "3rem",
@@ -88,9 +89,9 @@ export const styles = stylex.create({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: { default: "5rem", [breakpoints.sm]: "1rem" },
+    gap: { default: "5rem", [breakpoints.md]: "1rem" },
     marginBlock: "4rem 2rem",
-    marginLeft: { default: "unset", [breakpoints.sm]: "-4rem" },
+    marginLeft: { default: "unset", [breakpoints.md]: "-4rem" },
   },
   monthExperience: {
     display: "flex",

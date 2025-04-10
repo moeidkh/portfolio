@@ -27,7 +27,7 @@ export const styles = stylex.create({
     gap: "2rem",
   },
   title: {
-    fontSize: {default: "4.875rem", [breakpoints.sm]: "3.5rem"},
+    fontSize: {default: "4.875rem", [breakpoints.lg]: "3.5rem"},
     fontWeight: 300,
   },
   description: {
@@ -37,8 +37,8 @@ export const styles = stylex.create({
   AnchorButtonContainer: {
     width: "100%",
     display: "flex",
-    justifyContent: {default: "flex-end", [breakpoints.sm]: "center"},
-    paddingRight: {default: "4rem", [breakpoints.sm]: "unset"},
+    justifyContent: {default: "flex-end", [breakpoints.md]: "center"},
+    paddingRight: {default: "4rem", [breakpoints.md]: "unset"},
     paddingTop: "2.5rem",
   },
   AnchorButton: {
@@ -46,7 +46,7 @@ export const styles = stylex.create({
     position: "relative",
     display: "flex",
     borderRadius: "50%",
-    justifyContent: {default: "flex-end", [breakpoints.sm]: "center"},
+    justifyContent: {default: "flex-end", [breakpoints.md]: "center"},
     border: `1px solid ${variables["gray-500"]}`,
     padding: "1rem",
     cursor: "pointer",

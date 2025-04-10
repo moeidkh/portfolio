@@ -30,9 +30,9 @@ export const styles = stylex.create({
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
-    justifyContent: { default: "unset", [breakpoints.sm]: "center" },
+    justifyContent: { default: "unset", [breakpoints.md]: "center" },
     gap: "2rem",
-    marginLeft: { default: "unset", [breakpoints.sm]: "-10%" },
+    marginLeft: { default: "unset", [breakpoints.md]: "-10%" },
   },
   skillIcon: {
     width: "8rem",

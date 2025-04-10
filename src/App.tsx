@@ -26,7 +26,7 @@ const styles = stylex.create({
     color: variables.white,
   },
   main: {
-    maxWidth: { default: "124rem", [breakpoints.sm]: "100%" },
+    maxWidth: { default: "124rem", [breakpoints.lg]: "100%" },
     backdropFilter: "blur(3px)",
   },
 });

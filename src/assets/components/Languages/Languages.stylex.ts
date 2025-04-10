@@ -16,22 +16,22 @@ export const styles = stylex.create({
     gap: "2rem",
   },
   title: {
-    fontSize: {default:"2.25rem", [breakpoints.sm]: "2rem"},
+    fontSize: {default:"2.25rem", [breakpoints.md]: "2rem"},
     marginLeft: "-2rem"
   },
   languageContainer: {
     width: "100%",
     display: "flex",
-    flexDirection: {default: "row", [breakpoints.sm]: "column"},
+    flexDirection: {default: "row", [breakpoints.lg]: "column"},
     alignItems: "center",
-    gap: "2rem",
-    marginLeft: {default: 0 , [breakpoints.sm]: "-2rem"}
+    gap: {default: "2rem", [breakpoints.lg]: "1rem"},
+    marginLeft: {default: 0 , [breakpoints.md]: "-2rem"}
   },
   level: {
     color: variables["gray-400"],
   },
   language: {
-    width: {default: "20rem", [breakpoints.sm]: "15rem"},
+    width: {default: "20rem", [breakpoints.md]: "15rem"},
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",

@@ -13,7 +13,7 @@ export const styles = stylex.create({
     flexDirection: "column",
     paddingBottom: "4rem",
     fontWeight: 200,
-    marginLeft: {default: "unset", [breakpoints.sm]: "-2rem" }
+    marginLeft: {default: "unset", [breakpoints.md]: "-2rem" }
   },
   timelineContainer: {
     width: "fit-content",

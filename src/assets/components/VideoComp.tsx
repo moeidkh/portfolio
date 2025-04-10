@@ -9,8 +9,25 @@ const styles = stylex.create({
     minWidth: "100%",
     objectFit: "cover",
     inset: 0,
+    overflow: "hidden"
   },
 });
+
+// const styles = stylex.create({
+//   container: {
+//     position: "fixed",
+//     zIndex: -5,
+//     width: '100%',
+//     height: '100%',
+//     inset: 0,
+//     overflow: 'hidden',
+//   },
+//   video: {
+//     width: '100%',
+//     height: '100%',
+//     objectFit: 'cover',
+//   },
+// });
 
 const VideoComp = () => {
   const bgSrc = useSelector(
@@ -20,6 +37,11 @@ const VideoComp = () => {
   return (
     <video src={bgSrc} autoPlay muted loop {...stylex.props(styles.video)} />
   );
+  // return (
+  //   <div {...stylex.props(styles.container)}>
+  //     <video src={bgSrc} autoPlay muted loop {...stylex.props(styles.video)} />
+  //   </div>
+  // );
 };
 
 export default VideoComp;

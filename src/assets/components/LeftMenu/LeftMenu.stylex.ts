@@ -25,8 +25,8 @@ export const styles = stylex.create({
     transition: "all 0.25s linear",
   },
   menuContainer: {
-    width: { default: "20%", [breakpoints.sm]: "100%" },
-    height: { default: "100%", [breakpoints.sm]: "100dvh" },
+    width: { default: "20%", [breakpoints.md]: "100%" },
+    height: { default: "100%", [breakpoints.md]: "100dvh" },
     backgroundColor: variables["gray-900"],
     display: "flex",
     flexDirection: "column",

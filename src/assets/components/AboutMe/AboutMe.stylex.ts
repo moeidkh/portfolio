@@ -14,8 +14,8 @@ const spin = stylex.keyframes({
 
 export const styles = stylex.create({
   container: {
-    width: {default:"22.5rem", [breakpoints.sm]: "85%"},
-    height: {default: "90vh", [breakpoints.sm]: "50rem"},
+    width: {default:"22.5rem", [breakpoints.md]: "85%"},
+    height: {default: "90vh", [breakpoints.md]: "50rem"},
     borderRadius: "2rem",
     border: `1px solid ${variables["gray-600"]}`,
     display: "flex",
@@ -23,10 +23,10 @@ export const styles = stylex.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: "1.25rem",
-    position: { default: "sticky", [breakpoints.sm]: "relative" },
+    position: { default: "sticky", [breakpoints.md]: "relative" },
     top: "3rem",
     padding: "1.25rem 0.5rem 1.5rem",
-    marginLeft: {default: "2.5rem", [breakpoints.sm]: "unset"},
+    marginLeft: {default: "2.5rem", [breakpoints.md]: "unset"},
   },
   settingsIconContainer: {
     position: "absolute",
