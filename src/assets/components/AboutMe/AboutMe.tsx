@@ -16,7 +16,6 @@ const AboutMe = () => {
       <div
         key="settings"
         {...stylex.props(styles.settingsIconContainer)}
-        // onClick={() => dispatch({ type: "SHOWSETTINGMENU", settingMenu: true })}
         onClick={() =>
           dispatch({
             type: ModalAction.OpenModal,

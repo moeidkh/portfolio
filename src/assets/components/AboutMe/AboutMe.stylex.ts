@@ -14,19 +14,27 @@ const spin = stylex.keyframes({
 
 export const styles = stylex.create({
   container: {
-    width: {default:"22.5rem", [breakpoints.md]: "85%"},
-    height: {default: "90vh", [breakpoints.md]: "50rem"},
+    width: { default: "22.5rem", [breakpoints.md]: "85%" },
+    height: { default: "90vh", [breakpoints.md]: "50rem" },
     borderRadius: "2rem",
     border: `1px solid ${variables["gray-600"]}`,
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: "1.25rem",
+    gap: {
+      default: "1.25rem",
+      [breakpoints.md]: "1.25rem !important",
+      [breakpoints.lg]: "0.75rem",
+    },
     position: { default: "sticky", [breakpoints.md]: "relative" },
     top: "3rem",
-    padding: "1.25rem 0.5rem 1.5rem",
-    marginLeft: {default: "2.5rem", [breakpoints.md]: "unset"},
+    padding: {
+      default: "1.25rem 0.5rem 1.5rem",
+      [breakpoints.md]: "1.25rem 0.5rem 1.5rem !important",
+      [breakpoints.lg]: "1rem 0.5rem 1rem",
+    },
+    marginLeft: { default: "2.5rem", [breakpoints.md]: "unset" },
   },
   settingsIconContainer: {
     position: "absolute",
@@ -51,7 +59,11 @@ export const styles = stylex.create({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: "1.5rem",
+    padding: {
+      default: "1.5rem",
+      [breakpoints.md]: "1rem",
+      [breakpoints.lg]: "1rem",
+    },
   },
   name: {
     fontSize: "1.5rem",
@@ -66,8 +78,16 @@ export const styles = stylex.create({
     fontSize: "0.75rem",
   },
   imageContainer: {
-    width: "16rem",
-    height: "16rem",
+    width: {
+      default: "16rem",
+      [breakpoints.md]: "16rem !important",
+      [breakpoints.lg]: "12rem",
+    },
+    height: {
+      default: "16rem",
+      [breakpoints.lg]: "12rem",
+      [breakpoints.md]: "16rem !important",
+    },
     borderRadius: "1.5rem",
     overflow: "hidden",
   },
@@ -79,7 +99,11 @@ export const styles = stylex.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: "1.5rem",
+    fontSize: {
+      default: "1.5rem",
+      [breakpoints.md]: "1.5rem !important",
+      [breakpoints.lg]: "1.25rem",
+    },
     lineHeight: "2rem",
     fontWeight: 200,
     color: variables["gray-300"],
@@ -91,7 +115,11 @@ export const styles = stylex.create({
   },
   contactSection: {
     display: "flex",
-    gap: "1.5rem",
+    gap: {
+      default: "1.5rem",
+      [breakpoints.md]: "1.5rem !important",
+      [breakpoints.lg]: "1rem",
+    },
   },
   contactItem: {
     width: "8rem",
@@ -100,7 +128,11 @@ export const styles = stylex.create({
     padding: "0.75rem",
     borderRadius: "1rem",
     cursor: "pointer",
-    fontSize: "1.5rem",
+    fontSize: {
+      default: "1.5rem",
+      [breakpoints.md]: "1.5rem !important",
+      [breakpoints.lg]: "1.25rem",
+    },
     transition: "all 0.25s linear",
     display: "flex",
     alignItems: "center",
@@ -111,7 +143,11 @@ export const styles = stylex.create({
     },
   },
   contactItemText: {
-    fontSize: "1rem",
+    fontSize: {
+      default: "1rem",
+      [breakpoints.md]: "1rem !important",
+      [breakpoints.lg]: "0.85rem",
+    },
   },
   copyRight: {
     fontWeight: 500,
