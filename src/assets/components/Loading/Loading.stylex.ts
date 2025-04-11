@@ -7,6 +7,12 @@ const loadingAnimation = stylex.keyframes({
   "100%": { transform: "translateY(0)" },
 });
 
+const breakpoints = {
+  sm: "@media (max-width: 640px)",
+  md: "@media (max-width: 768px)",
+  lg: "@media (max-width: 1024px)",
+};
+
 export const styles = stylex.create({
   loadingContainer: {
     display: "flex",
@@ -22,8 +28,8 @@ export const styles = stylex.create({
     overflow: "hidden",
   },
   loadingDot: {
-    width: "3rem",
-    height: "3rem",
+    width: { default: "3rem", [breakpoints.md]: "2rem" },
+    height: { default: "3rem", [breakpoints.md]: "2rem" },
     backgroundColor: variables["dynamicColor"],
     borderRadius: "50%",
   },
