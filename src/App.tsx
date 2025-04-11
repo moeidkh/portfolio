@@ -6,9 +6,10 @@ import VideoComp from "./assets/components/VideoComp";
 import { variables } from "./Stylex/CssVariables.stylex";
 import { StylexUtils } from "./Stylex/styles.stylex";
 import { ThemeProvider } from "./contexts/ThemeProvider";
-import { Suspense } from "react";
+import { Suspense, useMemo } from "react";
 import ModalManager from "./assets/components/ModalManager/ModalManager";
 import MainComponent from "./assets/components/Main/MainComponent";
+import Loading from "./assets/components/Loading/Loading";
 
 const breakpoints = {
   sm: "@media (max-width: 640px)",
@@ -35,11 +36,15 @@ function App() {
   const containerStyles = StylexUtils.getStyles(styles.container);
   const mainStyles = StylexUtils.getStyles(styles.main);
 
+  const fallback = useMemo(() => <div>مشکلی به وجود آمده است</div>, []);
   return (
     <Provider store={store}>
       <ResetProvider>
-        <Suspense fallback={<div>مشکلی به وجود آمده است</div>}>
+        <Suspense fallback={fallback}>
           <ModalManager />
+        </Suspense>
+        <Suspense fallback={fallback}>
+          <Loading />
         </Suspense>
         <ThemeProvider>
           <div {...containerStyles}>

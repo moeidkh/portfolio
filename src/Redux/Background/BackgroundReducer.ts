@@ -2,7 +2,7 @@ type InitialStateType = {
   backgroundUrl?: string;
   loading?: boolean;
 };
-const ActionType = {
+export const ActionType = {
   SetLoading: "Background/SET_LOADING",
   SetBackground: "Background/SET_BACKGROUND",
 };

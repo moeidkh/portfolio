@@ -10,6 +10,7 @@ export const variables = stylex.defineVars({
   cyan: "#06b6d4",
   purple: "#d946ef",
   orange: "#f97316",
+  black: "#111",
   "black-90": "#00000090",
   "gray-900": "#111827",
   "gray-800": "#1f2937",

@@ -6,6 +6,7 @@ import { ThemesActionTypes } from "../../../Redux/Theme/ThemeReducer";
 import { styles } from "./SettingMenu.stylex";
 import { ModalAction } from "../../../Redux/Modal/ModalReducer";
 import { ModalTypes } from "../ModalManager/modal";
+import { ActionType } from "../../../Redux/Background/BackgroundReducer";
 
 interface ColorOption {
   id: string;
@@ -95,22 +96,22 @@ const SettingMenu = () => {
       {
         id: "earth",
         name: "Earth Lines Sphere",
-        path: "/video/video1.mp4",
+        path: "/video/video4.mp4",
       },
       {
         id: "abstract",
         name: "3D Abstract Ball",
-        path: "/video/video2.mp4",
+        path: "/video/video3.mp4",
       },
       {
         id: "water",
         name: "Water Waves",
-        path: "/video/video3.mp4",
+        path: "/video/video2.mp4",
       },
       {
         id: "liquids",
         name: "Liquids Wavy",
-        path: "/video/video4.mp4",
+        path: "/video/video1.mp4",
       },
     ],
     []
@@ -132,12 +133,6 @@ const SettingMenu = () => {
 
   const handleColorChange = useCallback((option: ColorOption) => {
     dispatch({
-      type: "CHANGEALL",
-      color: option.textColor,
-      border: option.borderColor,
-      bgColor: option.bgColor,
-    });
-    dispatch({
       type: ThemesActionTypes.SetTheme,
       payload: option.theme,
     });
@@ -145,13 +140,20 @@ const SettingMenu = () => {
 
   const handleBackgroundChange = useCallback((path: string) => {
     dispatch({
-      type: "SETBACKGROUND",
-      bg: path,
+      type: ActionType.SetBackground,
+      payload: { backgroundUrl: path },
+    });
+    dispatch({
+      type: ActionType.SetLoading,
+      payload: { loading: true },
     });
   }, []);
 
   return (
-    <div onClick={handleCloseMenu} {...stylex.props(styles.settingMenuContainer)}>
+    <div
+      onClick={handleCloseMenu}
+      {...stylex.props(styles.settingMenuContainer)}
+    >
       <div {...stylex.props(styles.closeIcon)} onClick={handleCloseMenu}>
         <i className="fi fi-rr-cross" aria-hidden="true" />
       </div>

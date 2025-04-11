@@ -1,5 +1,7 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import * as stylex from "@stylexjs/stylex";
+import { useEffect, useRef } from "react";
+import { ActionType } from "../../Redux/Background/BackgroundReducer";
 
 const styles = stylex.create({
   video: {
@@ -9,39 +11,52 @@ const styles = stylex.create({
     minWidth: "100%",
     objectFit: "cover",
     inset: 0,
-    overflow: "hidden"
+    overflow: "hidden",
   },
 });
 
-// const styles = stylex.create({
-//   container: {
-//     position: "fixed",
-//     zIndex: -5,
-//     width: '100%',
-//     height: '100%',
-//     inset: 0,
-//     overflow: 'hidden',
-//   },
-//   video: {
-//     width: '100%',
-//     height: '100%',
-//     objectFit: 'cover',
-//   },
-// });
-
 const VideoComp = () => {
+  const videoRef = useRef(null);
+  const dispatch = useDispatch();
   const bgSrc = useSelector(
     ({ backgroundReducer }) => backgroundReducer.backgroundUrl
   );
 
+  const loadedVideo = () => {
+    dispatch({
+      type: ActionType.SetLoading,
+      payload: { loading: false },
+    });
+  };
+
+  useEffect(() => {
+    if (videoRef.current) {
+      (videoRef.current as HTMLVideoElement).addEventListener(
+        "loadeddata",
+        loadedVideo
+      );
+    }
+
+    return () => {
+      if (videoRef.current) {
+        (videoRef.current as HTMLVideoElement).removeEventListener(
+          "loadeddata",
+          loadedVideo
+        );
+      }
+    };
+  }, [bgSrc]);
   return (
-    <video src={bgSrc} autoPlay muted loop {...stylex.props(styles.video)} />
+    <video
+      src={bgSrc}
+      autoPlay
+      muted
+      loop
+      {...stylex.props(styles.video)}
+      ref={videoRef}
+      // preload="auto"
+    />
   );
-  // return (
-  //   <div {...stylex.props(styles.container)}>
-  //     <video src={bgSrc} autoPlay muted loop {...stylex.props(styles.video)} />
-  //   </div>
-  // );
 };
 
 export default VideoComp;
