@@ -10,6 +10,22 @@ const ModalManager = () => {
   const dispatch = useDispatch();
   const modal = useSelector(({ ModalReducer }) => ModalReducer);
   const { theme } = useSelector(({ ThemeReducer }) => ThemeReducer);
+  
+  useEffect(() => {
+    const keyDownHandler = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        dispatch({
+          type: ModalAction.CloseModal,
+          payload: { modalType: modal.modalType },
+        });
+      }
+    };
+
+    window.addEventListener('keydown', keyDownHandler);
+    return () => {
+      window.removeEventListener('keydown', keyDownHandler);
+    };
+  }, [modal.modalType]);
 
   useEffect(() => {
     if (modal.modalType) {
