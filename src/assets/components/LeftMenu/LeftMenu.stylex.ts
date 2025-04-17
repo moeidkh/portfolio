@@ -26,7 +26,7 @@ export const styles = stylex.create({
   },
   menuContainer: {
     width: { default: "20%", [breakpoints.md]: "100%" },
-    height: { default: "100%", [breakpoints.md]: "100dvh" },
+    height: { default: "100vh", [breakpoints.md]: "100dvh" },
     backgroundColor: variables["gray-900"],
     display: "flex",
     flexDirection: "column",

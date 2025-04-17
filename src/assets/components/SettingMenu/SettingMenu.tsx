@@ -94,9 +94,9 @@ const SettingMenu = () => {
   const backgroundOptions = useMemo(
     () => [
       {
-        id: "earth",
-        name: "Earth Lines Sphere",
-        path: "/video/video4.mp4",
+        id: "water",
+        name: "Water Waves",
+        path: "/video/video2.mp4",
       },
       {
         id: "abstract",
@@ -104,14 +104,14 @@ const SettingMenu = () => {
         path: "/video/video3.mp4",
       },
       {
-        id: "water",
-        name: "Water Waves",
-        path: "/video/video2.mp4",
-      },
-      {
         id: "liquids",
         name: "Liquids Wavy",
         path: "/video/video1.mp4",
+      },
+      {
+        id: "earth",
+        name: "Earth Lines Sphere",
+        path: "/video/video4.mp4",
       },
     ],
     []
